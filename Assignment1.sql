@@ -43,4 +43,5 @@ CREATE TABLE Points (
 SELECT Team_won, count(*) FROM Fixtures GROUP BY team_won;
 SELECT Team_lost, count(*) FROM Fixtures GROUP BY team_lost;
 
-INSERT INTO points (Team_name, No_Of_Wins, No_of_Losses, Points) 
+INSERT INTO points (Team_name, No_Of_Wins, No_of_Losses, Points) SELECT f.Team_name, f.Team_won, count(*) FROM Fixtures f GROUP BY team_won;
+
